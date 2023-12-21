@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
       });
     }
     req.session.user = user;
-    res.redirect('/dashboard')
+    res.redirect('/')
   } catch (err) {
     res.status(400).json({
       status: 'error',

@@ -33,23 +33,37 @@
             <div class="collapse navbar-collapse" id="sidebarCollapse">
                 <!-- Navigation -->
                 <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/">
+                      <i class="bi bi-house"></i> Dashboard
+                    </a>
+                  </li>
+                  <% if (userType === 'admin' || userType === 'hr') { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/dashboard/">
-                            <i class="bi bi-house"></i> Dashboard
+                        <a class="nav-link" href="/dashboard/management">
+                            <i class="bi bi-people"></i> Management
                         </a>
                     </li>
-                    <% if (userType === 'admin' || userType === 'hr') { %>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/dashboard/management">
-                              <i class="bi bi-people"></i> Management
-                          </a>
-                      </li>
-                  <% } %>
+                <% } %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/leads">
+                      <i class="bi bi-bar-chart"></i> Leads
+                    </a>
+                  </li>
+                  <% if (userType === 'admin' || userType === 'hr') { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/dashboard/leads">
-                            <i class="bi bi-bar-chart"></i> Leads
+                        <a class="nav-link" href="/dashboard/jobs">
+                            <i class="bi bi-card-list"></i> Jobs Listing
                         </a>
                     </li>
+                <% } %>
+                <% if (userType === 'admin' || userType === 'hr') { %>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/dashboard/resume">
+                          <i class="bi bi-card-list"></i> Resumes
+                      </a>
+                  </li>
+              <% } %>
                 </ul>
                 <!-- Divider -->
                 <hr class="navbar-divider my-5 opacity-20">
@@ -94,15 +108,19 @@
                 </div>
                 <!-- Nav -->
                 <ul class="nav nav-tabs mt-4 overflow-x border-0">
+                  <% if (userType === 'admin') { %>
                     <li class="nav-item ">
                         <a href="" class="nav-link active" id="adminBtn">Admins</a>
                     </li>
+                    <% } %>
                     <li class="nav-item">
                         <a href="" class="nav-link font-regular" id="agentBtn">Agents</a>
                     </li>
+                    <% if (userType === 'admin') { %>
                     <li class="nav-item">
                         <a href="" class="nav-link font-regular" id="hrBtn">HR</a>
                     </li>
+                    <% } %>
                 </ul>
             </div>
         </div>
@@ -195,7 +213,8 @@
 
 </body>
 <script>
-document.getElementById('adminBtn').addEventListener("click",(e)=>{
+  if (document.getElementById('adminBtn')) {
+    document.getElementById('adminBtn').addEventListener("click",(e)=>{
 e.preventDefault();
 document.getElementById('admintable').style.display="table";
 document.getElementById('agenttable').style.display="none";
@@ -204,6 +223,8 @@ document.getElementById('adminBtn').classList.add("active");
 document.getElementById('agentBtn').classList.remove("active");
 document.getElementById('hrBtn').classList.remove("active");
 })
+  }
+
 document.getElementById('agentBtn').addEventListener("click",(e)=>{
 e.preventDefault();
 document.getElementById('admintable').style.display="none";
@@ -213,7 +234,8 @@ document.getElementById('agentBtn').classList.add("active");
 document.getElementById('adminBtn').classList.remove("active");
 document.getElementById('hrBtn').classList.remove("active");
 })
-document.getElementById('hrBtn').addEventListener("click",(e)=>{
+if (document.getElementById('hrBtn')) {
+  document.getElementById('hrBtn').addEventListener("click",(e)=>{
 e.preventDefault();
 document.getElementById('admintable').style.display="none";
 document.getElementById('agenttable').style.display="none";
@@ -222,5 +244,7 @@ document.getElementById('hrBtn').classList.add("active");
 document.getElementById('adminBtn').classList.remove("active");
 document.getElementById('agentBtn').classList.remove("active");
 })
+}
+
 </script>
 </html>

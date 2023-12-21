@@ -67,16 +67,32 @@ button {
                 <i class="bi bi-house"></i> Dashboard
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/dashboard/management">
-                <i class="bi bi-people"></i> Management
-              </a>
-            </li>
+            <% if (userType === 'admin' || userType === 'hr') { %>
+              <li class="nav-item">
+                  <a class="nav-link" href="/dashboard/management">
+                      <i class="bi bi-people"></i> Management
+                  </a>
+              </li>
+          <% } %>
             <li class="nav-item">
               <a class="nav-link" href="/dashboard/leads">
                 <i class="bi bi-bar-chart"></i> Leads
               </a>
             </li>
+            <% if (userType === 'admin' || userType === 'hr') { %>
+              <li class="nav-item">
+                  <a class="nav-link" href="/dashboard/jobs">
+                      <i class="bi bi-card-list"></i> Jobs Listing
+                  </a>
+              </li>
+          <% } %>
+          <% if (userType === 'admin' || userType === 'hr') { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/resume">
+                    <i class="bi bi-card-list"></i> Resumes
+                </a>
+            </li>
+        <% } %>
           </ul>
           <!-- Divider -->
           <hr class="navbar-divider my-5 opacity-20">
@@ -154,9 +170,11 @@ button {
               <label for="userType">User Type</label>
               <select id="userType" name="userType"  required onchange="displayLeadAccess()">
                 <option value="">Select user type</option>
+                <% if (userType === 'admin') { %>
                 <option value="admin">Admin</option>
-                <option value="agent">Agent</option>
                 <option value="hr">HR</option>
+                <% } %>
+                <option value="agent">Agent</option>
               </select>
               <label id="lb" for="leadAccess" style="display: none;">Lead Access</label>
               <div id="leadAccess"  style="display: none;">

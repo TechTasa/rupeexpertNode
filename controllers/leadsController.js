@@ -2,6 +2,10 @@ const Lead = require('../models/Lead');
 const User = require('../models/User');
 
 exports.getLeads = async (req, res) => {
+  // Check if user is logged in
+  if (!req.session.user) {
+    return res.redirect('/auth/login');
+  }
     try {
       let leads;
       const userType=req.session.user.userType;

@@ -10,7 +10,9 @@ const leadRoutes = require('./routes/leadRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const managementRoutes = require('./routes/managementRoutes');
 const leadsRoutes = require('./routes/leadsRoutes');
-
+const jobRoutes = require('./routes/jobRoutes');
+const careerRoutes = require('./routes/careerRoutes');
+const resumeRoutes = require('./routes/resumeRoutes');
 
 
 const { connect} = require('./config/db');
@@ -23,6 +25,9 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use('/uploads', express.static('uploads'));
+
+
 // Connect Database
 connect();
 
@@ -45,21 +50,19 @@ const store = new MongoDBStore({
   }));
   
 
-
-
-
-
-
   app.use('/auth', authRoutes);
   app.use('/loan', leadRoutes);
   app.use('/dashboard', dashboardRoutes);
   app.use('/dashboard/management', managementRoutes);
   app.use('/dashboard/leads', leadsRoutes);
+  app.use('/dashboard/jobs',jobRoutes);
+  app.use('/dashboard/resume', resumeRoutes);
+  app.use('/career',careerRoutes);
 
 
   app.get('/', (req, res) => {
-    // res.render("loanpage")
-    res.sendFile(path.join(__dirname, 'public','html', 'index.html'));
+    const loggedin=req.session.user;
+    res.render("home",{loggedin})
   })
   
   app.get('/services', (req, res) => {
@@ -70,31 +73,6 @@ const store = new MongoDBStore({
     // res.render("loanpage")
     res.sendFile(path.join(__dirname, 'public','html', 'contact.html'));
   })
-
-  app.get('/career', (req, res) => {
-    // res.render("loanpage")
-    res.sendFile(path.join(__dirname, 'public','html', 'career.html'));
-  })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   
 const PORT = process.env.PORT || 5000;
