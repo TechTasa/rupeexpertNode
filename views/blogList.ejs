@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog List</title>
+</head>
+<body>
+    <h1>Blog List</h1>
+    <% blogs.forEach(function(blog) { %>
+        <div>
+            <h2><%= blog.title %></h2>
+            <p>By <%= blog.author %> on <%= blog.date.toDateString() %></p>
+            <div id="blog-<%= blog._id %>"></div>
+            <script>
+                var quill = new Quill('#blog-<%= blog._id %>', {
+                    readOnly: true,
+                    theme: 'snow'
+                });
+                quill.setContents(<%- blog.contentDelta %>);
+            </script>
+        </div>
+    <% }); %>
+</body>
+</html>

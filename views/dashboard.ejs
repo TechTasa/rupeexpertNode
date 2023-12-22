@@ -48,11 +48,13 @@
                               </a>
                           </li>
                       <% } %>
+                      <% if (userType === 'admin' || userType === 'agent') { %>
                         <li class="nav-item">
                           <a class="nav-link" href="/dashboard/leads">
                             <i class="bi bi-bar-chart"></i> Leads
                           </a>
                         </li>
+                        <% } %>
                         <% if (userType === 'admin' || userType === 'hr') { %>
                           <li class="nav-item">
                               <a class="nav-link" href="/dashboard/jobs">

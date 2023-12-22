@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Blog</title>
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        #editor {
+    height: 375px;
+  }
+  
+    </style>
+</head>
+<body>
+    <h1>Create Blog</h1>
+    <form action="/dashboard/blog/create" method="post">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author" value="<%= userName%>"><br>
+        <label for="contentDelta">Content:</label><br>
+        <div id="editor"></div>
+        <input type="hidden" id="contentDelta" name="contentDelta">
+        <input type="submit" value="Submit">
+    </form>
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var quill = new Quill('#editor', {
+    modules: {
+      toolbar: [
+        [{ header: [1, 2, false] }],
+        ['bold', 'italic', 'underline'],
+        ['image', 'code-block']
+      ]
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'  // or 'bubble'
+  });
+        document.querySelector('form').addEventListener('submit', function() {
+            var contentDelta = quill.getContents();
+            document.querySelector('#contentDelta').value = JSON.stringify(contentDelta);
+        });
+    </script>
+</body>
+</html>
