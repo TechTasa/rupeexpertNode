@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>Blog List</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.bubble.css">
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css">
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
 </head>
 <body>
     <h1>Blog List</h1>
@@ -15,9 +20,13 @@
                     readOnly: true,
                     theme: 'snow'
                 });
-                quill.setContents(<%- blog.contentDelta %>);
+                quill.setContents( JSON.stringify(<%- blog.contentDelta %>) );
             </script>
         </div>
     <% }); %>
 </body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+
 </html>
