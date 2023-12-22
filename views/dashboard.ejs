@@ -63,7 +63,14 @@
                       <% if (userType === 'admin' || userType === 'hr') { %>
                         <li class="nav-item">
                             <a class="nav-link" href="/dashboard/resume">
-                                <i class="bi bi-card-list"></i> Resumes
+                                <i class="bi bi-file-person"></i> Resumes
+                            </a>
+                        </li>
+                    <% } %>
+                    <% if (userType === 'admin' || userType === 'blog writer') { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/blog">
+                                <i class="bi bi-file-text"></i> Blog
                             </a>
                         </li>
                     <% } %>
@@ -198,5 +205,5 @@
 
 
 </body>
-
+<script src="/js/navToggle.js"></script>
 </html>
