@@ -7,26 +7,24 @@
     <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.bubble.css">
     <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css">
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
-    <style>
-        /* Webpixels CSS */
-        /* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
-        /* URL: https://github.com/webpixels/css */
-    
-        @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
-    
-        /* Bootstrap Icons */
-        @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
-    </style>
 </head>
 <body>
     <h1>Blog List</h1>
     <% blogs.forEach(function(blog) { %>
         <div>
             <h2><%= blog.title %></h2>
-            <p>By <%= blog.author %></p>
+            <p>By <%= blog.author %> on <%= blog.date.toDateString() %></p>
+            <div id="blog-<%= blog._id %>"></div>
+            <script>
+                var contentDelta = <%- blog.contentDelta %>;
+                console.log(contentDelta);
+                var quill = new Quill('#blog-<%= blog._id %>', {
+                    readOnly: true,
+                    theme: 'bubble'
+                });
+                quill.setContents(contentDelta);
+            </script>
         </div>
-        <a href="/dashboard/blog/<%= blog._id %>" class="btn btn-sm btn-neutral">View</a>
-        <a href="/dashboard/blog/delete/<%= blog._id %>" onclick="return confirm('Are you sure you want to delete this user?');" class="btn btn-sm btn-neutral"><i class="bi bi-trash"></i></a>
     <% }); %>
     
 </body>
