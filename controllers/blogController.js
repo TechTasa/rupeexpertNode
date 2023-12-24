@@ -1,4 +1,4 @@
-const Blog = require('../models/blog');
+const Blog = require('../models/Blog');
 
 exports.blog_list = async function(req, res) {
     let blogs = await Blog.find({}, 'title author');
