@@ -2,7 +2,8 @@ const Blog = require('../models/blog');
 
 exports.blog_list = async function(req, res) {
     let blogs = await Blog.find({}, 'title author');
-    res.render('blogList', { blogs: blogs });
+    const userType=req.session.user.userType;
+    res.render('blogList', { blogs: blogs,userType });
 };
 
 // Add a new function to get a specific blog by id

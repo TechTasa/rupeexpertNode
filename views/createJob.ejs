@@ -93,6 +93,13 @@ button {
                 </a>
             </li>
         <% } %>
+        <% if (userType === 'admin' || userType === 'blog writer') { %>
+          <li class="nav-item">
+              <a class="nav-link" href="/dashboard/blog">
+                  <i class="bi bi-file-text"></i> Blog
+              </a>
+          </li>
+      <% } %>
           </ul>
           <!-- Divider -->
           <hr class="navbar-divider my-5 opacity-20">
@@ -178,7 +185,7 @@ button {
   </div>
   
 </body>
-
+<script src="/js/navToggle.js"></script>
 </html>
 
 

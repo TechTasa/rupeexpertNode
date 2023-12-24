@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Management</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    </head>
   <style>
     /* Webpixels CSS */
     /* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
@@ -12,7 +15,6 @@
     /* Bootstrap Icons */
     @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
 </style>
-</head>
 <body>
   <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
     <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg"
@@ -64,6 +66,13 @@
                       </a>
                   </li>
               <% } %>
+              <% if (userType === 'admin' || userType === 'blog writer') { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/blog">
+                        <i class="bi bi-file-text"></i> Blog
+                    </a>
+                </li>
+            <% } %>
                 </ul>
                 <!-- Divider -->
                 <hr class="navbar-divider my-5 opacity-20">
@@ -240,6 +249,7 @@
 </div>
 
 </body>
+<script src="/js/navToggle.js"></script>
 <script>
   if (document.getElementById('adminBtn')) {
     document.getElementById('adminBtn').addEventListener("click",(e)=>{
