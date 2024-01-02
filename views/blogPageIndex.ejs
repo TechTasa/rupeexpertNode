@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RupeeXpert</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 
 <body>
@@ -23,36 +23,26 @@
         <ul class="links">
             <li class=" link "><a href="/">Home</a></li>
             <li class=" link"><a href="/services">Services</a></li>
-            <li class=" link active"><a href="/career">Career</a></li>
-            <li class=" link "><a href="/blog">Blog</a></li>
+            <li class=" link"><a href="/career">Career</a></li>
+            <li class=" link active"><a href="/blog">Blog</a></li>
             <li class=" link"><a href="/contact">Contact</a></li>
         </ul>
         <button class="cta" onClick='location="/auth/login"'>Sign In</button>
     </nav>
-    <section class="career">
-        <h1 class="career-title">Open Positions</h1>
-        <div class="career-job-cards">
-
-
-            <!-- Copy Job Card And Add Info Based On The position -->
-
-
-            <% jobs.forEach(function(job) { %>
-                <div class="career-job-card">
-                  <h1 class="career-job-card-title"><%= job.title %></h1>
-                  <p class="career-job-card-discription"><%= job.location %></p>
-                  <div class="career-job-card-info"><%= job.description %></div>
-                  <a style="text-decoration: none; color: #fff;" href="/career/apply/<%= job._id %>">Apply</a>
+    <section class="blog">
+       
+        <% blogs.forEach(function(blog) { %>
+            <div class="card">
+                <img src="/<%= blog.image %>" alt="<%= blog.title %>">
+                <div class="card-body">
+                    <h4><%= blog.title %></h4>
+                    <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read More</a>
                 </div>
-              <% }); %>
-           
+            </div>
+        <% }); %>
 
 
-            <!-- //////////////////////////////////////////////////// -->
-        </div>
     </section>
-
-
     <section class="footer">
         <div class="footer-content">
             <img src="/images/XpertRupees_Logo_White.svg" alt="">
@@ -60,6 +50,7 @@
                 <li class=" footer-link"><a href="/">Home</a></li>
                 <li class=" footer-link"><a href="/services">Services</a></li>
                 <li class=" footer-link"><a href="/career">Career</a></li>
+                <li class=" footer-link"><a href="/blog">Blog</a></li>
                 <li class=" footer-link"><a href="/contact">Contact</a></li>
             </ul>
             <div class="icons">

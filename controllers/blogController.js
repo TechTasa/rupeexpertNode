@@ -8,11 +8,6 @@ exports.blog_list = async function(req, res) {
     res.render('blogList', { blogs: blogs,userType });
 };
 
-// Add a new function to get a specific blog by id
-exports.blog_detail = async function(req, res) {
-    let blog = await Blog.findById(req.params.id);
-    res.render('blogDetail', { blog: blog });
-};
 
 exports.blog_create_get = function(req, res) {
     const userType=req.session.user.userType

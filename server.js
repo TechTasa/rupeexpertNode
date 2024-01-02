@@ -14,6 +14,7 @@ const jobRoutes = require('./routes/jobRoutes');
 const careerRoutes = require('./routes/careerRoutes');
 const resumeRoutes = require('./routes/resumeRoutes');
 const blogRoutes = require('./routes/blogRoutes');
+const blogPageRoutes = require('./routes/blogPageRoutes');
 
 
 const { connect} = require('./config/db');
@@ -60,6 +61,7 @@ const store = new MongoDBStore({
   app.use('/dashboard/resume', resumeRoutes);
   app.use('/dashboard/blog', blogRoutes);
   app.use('/career',careerRoutes);
+  app.use('/blog', blogPageRoutes);
 
 
   app.get('/', (req, res) => {
