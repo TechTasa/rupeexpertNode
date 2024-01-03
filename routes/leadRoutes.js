@@ -8,7 +8,8 @@ router.post('/apply/:type', leadController.applyLoan);
 
 // Show the form
 router.get('/apply/:type', (req, res) => {
-    res.render('apply', { type: req.params.type });
+    const loggedin=req.session.user
+    res.render('apply', { type: req.params.type ,loggedin});
 });
 
 module.exports = router;

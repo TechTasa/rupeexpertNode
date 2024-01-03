@@ -43,7 +43,12 @@
                 <li class=" link"><a href="/contact">Contact</a></li>
             </ul>
           
-            <button class="cta" onClick='location="/auth/login"'>Sign In</button>
+             
+            <% if (loggedin) { %>
+              <button class="cta" onClick='location="/dashboard"'>Dashboard</button>
+          <% } else { %>
+              <button class="cta" onClick='location="/auth/login"'>Sign In</button>
+          <% } %>
             
     </nav>
     <div class="container">
