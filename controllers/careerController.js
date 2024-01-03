@@ -21,7 +21,8 @@ const upload = multer({ storage: storage });
 
 exports.getCareerPage = async (req, res) => {
   const jobs = await Job.find();
-  res.render('career', { jobs: jobs });
+  const loggedin=req.session.user;
+  res.render('career', { jobs: jobs ,loggedin});
 };
 
 exports.getApplyPage = async (req, res) => {

@@ -8,12 +8,17 @@ btn.addEventListener('click', () => {
     console.log("here");
 
 });
-close.addEventListener('click', () => {
-    calculater.classList.toggle("active")
-});
-cal.addEventListener('click', () => {
-    calculater.classList.toggle("active")
-});
+if(close){
+    close.addEventListener('click', () => {
+        calculater.classList.toggle("active")
+    });
+}
+if (cal){
+    cal.addEventListener('click', () => {
+        calculater.classList.toggle("active")
+    });
+}
+
 $(document).ready(function () {
 
 
@@ -27,21 +32,24 @@ $(document).ready(function () {
 let imgs = document.querySelectorAll(".banner-wrapper img");
 let banner = document.querySelector(".banner-wrapper");
 let count = 1;
-function slide() {
-    if (count < imgs.length) {
-        console.log(banner.clientWidth)
-        banner.style.translate = count * banner.clientWidth + "px";
-        count++;
+if(banner){
+    function slide() {
+        if (count < imgs.length) {
+            console.log(banner.clientWidth)
+            banner.style.translate = count * banner.clientWidth + "px";
+            count++;
+        }
+        else {
+            count = 1;
+            banner.style.translate = "0%";
+        }
+    
     }
-    else {
-        count = 1;
-        banner.style.translate = "0%";
-    }
-
+    
+    
+    setInterval(function () {
+        slide();
+    }, 5000)
+    
+    
 }
-
-
-setInterval(function () {
-    slide();
-}, 5000)
-

@@ -70,12 +70,14 @@ const store = new MongoDBStore({
   })
   
   app.get('/services', (req, res) => {
-    // res.render("loanpage")
-    res.sendFile(path.join(__dirname, 'public','html', 'services.html'));
+    const loggedin=req.session.user;
+    res.render("services",{loggedin})
+    // res.sendFile(path.join(__dirname, 'public','html', 'services.html'));
   })
   app.get('/contact', (req, res) => {
-    // res.render("loanpage")
-    res.sendFile(path.join(__dirname, 'public','html', 'contact.html'));
+    const loggedin=req.session.user;
+    res.render("contact",{loggedin})
+    // res.sendFile(path.join(__dirname, 'public','html', 'contact.html'));
   })
 
   

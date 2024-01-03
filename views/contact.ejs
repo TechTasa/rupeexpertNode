@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RupeeXpert</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 
 <body>
     <nav class="navbar">
@@ -19,55 +20,57 @@
                 <line x1="4" y1="12" x2="20" y2="12" />
                 <line x1="4" y1="18" x2="20" y2="18" />
             </svg></div>
-        <a href="/" class="logo"><img src="/images/XpertRupees_Logo.svg" alt=""></a>
+        <a href="/" class="logo"><img src="../images/XpertRupees_Logo.svg" alt=""></a>
         <ul class="links">
             <li class=" link "><a href="/">Home</a></li>
             <li class=" link"><a href="/services">Services</a></li>
-            <li class=" link active"><a href="/career">Career</a></li>
+            <li class=" link"><a href="/career">Career</a></li>
             <li class=" link "><a href="/blog">Blog</a></li>
-            <li class=" link"><a href="/contact">Contact</a></li>
+            <li class=" link active"><a href="/contact">Contact</a></li>
         </ul>
         <% if (loggedin) { %>
             <button class="cta" onClick='location="/dashboard"'>Dashboard</button>
-        <% } else { %>
+            <% } else { %>
             <button class="cta" onClick='location="/auth/login"'>Sign In</button>
-        <% } %>
+            <% } %>
     </nav>
-    <section class="career">
-        <h1 class="career-title">Open Positions</h1>
-        <div class="career-job-cards">
-
-
-            <!-- Copy Job Card And Add Info Based On The position -->
-
-
-            <% jobs.forEach(function(job) { %>
-                <div class="career-job-card">
-                  <h1 class="career-job-card-title"><%= job.title %></h1>
-                  <p class="career-job-card-discription"><%= job.location %></p>
-                  <div class="career-job-card-info"><%= job.description %></div>
-                  <a style="text-decoration: none; color: #fff;" href="/career/apply/<%= job._id %>">Apply</a>
-                </div>
-              <% }); %>
-           
-
-
-            <!-- //////////////////////////////////////////////////// -->
+    <section class="contact-page">
+        <h1>Contact Us</h1>
+        <img src="../images/Contact-bg.png" alt="">
+        <div class="contact-box">
+            <div class="box-cards">
+                <img src="" alt="">
+                <h1>Toll Free:</h1>
+                <h2>+91 8956148199</h2>
+                <p>Our customer service experts are here for you. Lines are open Mon-Sat from 9:30 am – 6:30 pm</p>
+            </div>
+            <div class="box-cards">
+                <img src="" alt="">
+                <h1>WhatsApp:</h1>
+                <h2>+91 8956148199</h2>
+                <p>You can even reach out to us via WhatsApp. Our service expert team will help you with your queries
+                </p>
+            </div>
+            <div class="box-cards">
+                <img src="" alt="">
+                <h1>Email:</h1>
+                <h2>hr.assistant@oceanone.co.in</h2>
+                <p>For queries related to loans, credit cards or in case of any general enquiries</p>
+            </div>
         </div>
     </section>
-
-
     <section class="footer">
-        <div class="footer-content">
-            <img src="/images/XpertRupees_Logo_White.svg" alt="">
+       <div class="footer-content">
+            <img src="../images/XpertRupees_Logo_White.svg" alt="">
             <ul>
                 <li class=" footer-link"><a href="/">Home</a></li>
                 <li class=" footer-link"><a href="/services">Services</a></li>
                 <li class=" footer-link"><a href="/career">Career</a></li>
+                <li class=" footer-link"><a href="/blog">Blog</a></li>
                 <li class=" footer-link"><a href="/contact">Contact</a></li>
             </ul>
             <div class="icons">
-                <a href="https://www.facebook.com/rupeexpert/?ref=pages_you_manage"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"
+                <a target="_blank" href="https://www.facebook.com/rupeexpert/?ref=pages_you_manage"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"
                         width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -150,7 +153,6 @@
             <small> Developed By <a href="https://www.techtasa.com/">Techtasa</a></small>
         </section>
 </body>
-<script src="/js/jquery.js"></script>
-<script src="/js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </html>

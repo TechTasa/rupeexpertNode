@@ -27,7 +27,11 @@
             <li class=" link active"><a href="/blog">Blog</a></li>
             <li class=" link"><a href="/contact">Contact</a></li>
         </ul>
-        <button class="cta" onClick='location="/auth/login"'>Sign In</button>
+        <% if (loggedin) { %>
+            <button class="cta" onClick='location="/dashboard"'>Dashboard</button>
+            <% } else { %>
+            <button class="cta" onClick='location="/auth/login"'>Sign In</button>
+            <% } %>
     </nav>
     <section class="blog">
        
