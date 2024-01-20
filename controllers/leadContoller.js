@@ -36,6 +36,7 @@ exports.applyLoan = async (req, res) => {
     ITR: req.files["ITR"] ? req.files["ITR"][0].path : undefined,
     companyBankStatement: req.files["companyBankStatement"] ? req.files["companyBankStatement"][0].path : undefined,
     companyAddressProof: req.files["companyAddressProof"] ? req.files["companyAddressProof"][0].path : undefined,
+    companyPancard: req.files["companyPancard"] ? req.files["companyPancard"][0].path : undefined,
   };
 
   try {

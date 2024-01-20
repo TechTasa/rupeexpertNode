@@ -27,6 +27,7 @@ router.post(
     { name: "passportSizePhoto", maxCount: 1 },
     { name: "bankStatement", maxCount: 1 },
     { name: "offerLetter", maxCount: 1 },
+    { name: "companyPancard", maxCount: 1 },
     { name: "ITR", maxCount: 1 },
     { name: "companyBankStatement", maxCount: 1 },
     { name: "companyAddressProof", maxCount: 1 },
