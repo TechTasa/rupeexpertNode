@@ -74,6 +74,11 @@ const store = new MongoDBStore({
     res.render("services",{loggedin})
     // res.sendFile(path.join(__dirname, 'public','html', 'services.html'));
   })
+  app.get('/services/creditcard', (req, res) => {
+    const loggedin=req.session.user;
+    res.render("creditcard",{loggedin})
+    // res.sendFile(path.join(__dirname, 'public','html', 'services.html'));
+  })
   app.get('/contact', (req, res) => {
     const loggedin=req.session.user;
     res.render("contact",{loggedin})
