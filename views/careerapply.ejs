@@ -47,6 +47,7 @@
     </nav>
     <div class="container">
         <div class="title">Apply for <%= job.title %></div>
+        <iframe src="/<%= job.document %>" frameborder="0" width="100%" height="500px"></iframe>
         <form action="/career/apply/<%= job._id %>" method="POST" enctype="multipart/form-data">
             <div class="user__details">
                 <div class="input__box">

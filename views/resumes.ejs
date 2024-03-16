@@ -161,7 +161,11 @@
                       <%= resume.phone %>
                     </td>
                     <td>
-                      <%= resume.job.title %>
+                      <% if (resume.job) { %>
+                        <p><%= resume.job.title %></p>
+                      <% } else { %>
+                        <p>Job Was Deleted</p>
+                      <% } %>
                     </td>
                     <td>
                       <a href="/dashboard/resume/view/<%= resume._id %>" class="btn btn-sm btn-neutral">View</a>

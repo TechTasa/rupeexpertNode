@@ -148,7 +148,9 @@
               <p>Name: <%= resume.name %></p>
               <p>Email: <%= resume.email %></p>
               <p>Phone: <%= resume.phone %></p>
-              <p>Job: <%= resume.job.title %></p>
+              <% if (resume.job.title) { %>
+                <p>Job: <%= resume.job.title %></p>
+              <% } %>
               <p>Date of Application: <%= resume.createdAt %></p>
               <iframe
                 src="/<%= resume.document %>"
