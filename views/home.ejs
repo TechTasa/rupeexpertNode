@@ -30,9 +30,9 @@
             </svg></div>
         <a href="/" class="logo"><img src="../images/XpertRupees_Logo.svg" alt=""></a>
         
-            <button id="pwaToast" class="cta" onClick="installApp()">Install App</button>
+            <!-- <button style="display: none;" id="pwaToast" class="cta" onClick="installApp()">Install App</button> -->
           
-        <!-- <div class="popup" id="pwaToast">
+        <div class="popup" id="pwaToast" style="display: none;">
             <div class="popup-header">
                 <span>RupeeXpert App</span>
                 <button class="close-button">×</button>
@@ -45,7 +45,7 @@
                 <button class="cancel-button">Cancel</button>
                 <button class="ok-button" onClick="installApp()">Install App</button>
             </div>
-        </div> -->
+        </div>
         <ul class="links">
                 <li class=" link active"><a href="/">Home</a></li>
                 <li class=" link"><a href="/services">Services</a></li>
@@ -389,14 +389,14 @@
         <small> Developed By <a href="https://www.techtasa.com/">Techtasa</a></small>
     </section>
     <script>
-        // document.querySelector(".cancel-button").addEventListener("click",()=>{
-        //     document.getElementById("pwaToast").style.display="none"
-        // })
+        document.querySelector(".cancel-button").addEventListener("click",()=>{
+            document.getElementById("pwaToast").style.display="none"
+        })
         var deferredPrompt;
-window.addEventListener('beforeinstallprompt', function(e) {
-    console.log("beforeinstallprompt fired");
-   e.preventDefault();
-    deferredPrompt = e;
+        window.addEventListener('beforeinstallprompt', function(e) {
+            console.log("beforeinstallprompt fired");
+            e.preventDefault();
+            deferredPrompt = e;
 //    pwaToast.show();
 document.getElementById("pwaToast").style.display="block"
 });
