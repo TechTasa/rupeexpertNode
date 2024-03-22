@@ -51,7 +51,6 @@ const store = new MongoDBStore({
     store: store
   }));
   
-
   app.use('/auth', authRoutes);
   app.use('/loan', leadRoutes);
   app.use('/dashboard', dashboardRoutes);
