@@ -66,8 +66,6 @@ const store = new MongoDBStore({
 
   app.get('/', (req, res) => {
     const loggedin=req.session.user;
-    console.log(req.session.user);
-    console.log(loggedin);
     res.render("home",{loggedin})
   })
   

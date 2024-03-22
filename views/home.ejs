@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-       
+      
 </head>
 
 <body>
@@ -29,7 +29,24 @@
                 <line x1="4" y1="18" x2="20" y2="18" />
             </svg></div>
         <a href="/" class="logo"><img src="../images/XpertRupees_Logo.svg" alt=""></a>
-            <ul class="links">
+        
+            <button id="pwaToast" class="cta" onClick="installApp()">Install App</button>
+          
+        <!-- <div class="popup" id="pwaToast">
+            <div class="popup-header">
+                <span>RupeeXpert App</span>
+                <button class="close-button">×</button>
+            </div>
+            <hr>
+            <div class="popup-content">
+                <p>You can now install RupeeXpert on your device</p>
+            </div>
+            <div class="popup-buttons">
+                <button class="cancel-button">Cancel</button>
+                <button class="ok-button" onClick="installApp()">Install App</button>
+            </div>
+        </div> -->
+        <ul class="links">
                 <li class=" link active"><a href="/">Home</a></li>
                 <li class=" link"><a href="/services">Services</a></li>
                 <li class=" link"><a href="/career">Career</a></li>
@@ -43,7 +60,7 @@
                 <button class="cta" onClick='location="/auth/login"'>Sign In</button>
                 <% } %>
             
-           
+                
     </nav>
    
     <section class="focus">
@@ -368,8 +385,40 @@
     </style>
     <section class="footer2">
         <small>&copy; Copyright 2024, Ocean One Pvt. Ltd</small>
+        
         <small> Developed By <a href="https://www.techtasa.com/">Techtasa</a></small>
     </section>
+    <script>
+        // document.querySelector(".cancel-button").addEventListener("click",()=>{
+        //     document.getElementById("pwaToast").style.display="none"
+        // })
+        var deferredPrompt;
+window.addEventListener('beforeinstallprompt', function(e) {
+    console.log("beforeinstallprompt fired");
+   e.preventDefault();
+    deferredPrompt = e;
+//    pwaToast.show();
+document.getElementById("pwaToast").style.display="block"
+});
+
+function installApp() {
+    deferredPrompt.prompt();
+//    pwaToast.hide();
+document.getElementById("pwaToast").style.display="none"
+    deferredPrompt.userChoice
+        .then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('PWA setup accepted');
+            } else {
+                console.log('PWA setup rejected');
+            }
+            deferredPrompt = null;
+        });
+}
+
+
+
+    </script>
 </body>
 <script src="../js/jquery.js"></script>
 <script src="../js/script.js"></script>

@@ -17,3 +17,4 @@ self.addEventListener('install', (event) => {
     );
   });
   
+  
