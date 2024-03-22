@@ -19,6 +19,7 @@ const blogPageRoutes = require('./routes/blogPageRoutes');
 
 const { connect} = require('./config/db');
 const bodyParser = require('body-parser');
+const { log } = require('console');
 
 require('dotenv').config();
 
@@ -65,6 +66,8 @@ const store = new MongoDBStore({
 
   app.get('/', (req, res) => {
     const loggedin=req.session.user;
+    console.log(req.session.user);
+    console.log(loggedin);
     res.render("home",{loggedin})
   })
   
