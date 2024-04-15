@@ -5,7 +5,7 @@
 # Installation
  Clone the repository:
 
-``` git clone https://github.com/TechTasa/rupeexpertNode.git```
+```git clone https://github.com/TechTasa/rupeexpertNode.git```
 
 ``` 2. cd rupeexpertNode```
 
