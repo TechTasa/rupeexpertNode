@@ -13,7 +13,7 @@ git clone https://github.com/TechTasa/rupeexpertNode.git
 ```
 cd rupeexpertNode
 ```
-3. Select Branch<br>
+3. Select Branch
 
 ```
 git checkout -b main
@@ -31,25 +31,36 @@ OR
 git checkout -b inhouse
 ```
  
-            
- ```5. npm install```<br>
+``` 
+npm install
+```
 
- ```6. create .env file in root directory```<br>
-    ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/6ae7c7c9-8d87-4319-8869-e0f0f61abd2d)<br>
+```
+Create .env file in root directory
+```
+![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/6ae7c7c9-8d87-4319-8869-e0f0f61abd2d)<br>
 
+```
+Put credentials in .env file
+```
+![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/b1b216c0-5974-4f3c-a824-1411bfa32134)<br>
 
- ```7. Put credentials in .env file```<br>
- ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/b1b216c0-5974-4f3c-a824-1411bfa32134)<br>
+```
+Note: each branch will have different credentials
+```
 
- 
-    ```Note: each branch will have different credentials```
+```
+npm run dev
+```
+OR
 
-    
- ```8. npm run dev```<br>
-       or<br>
-    ```npm start```<br>
+```
+npm start
+```
 
- ```10. By default it will run on http://localhost:611```
+```
+By default it will run on http://localhost:611
+```
 
     
 # File/Folder Structure
