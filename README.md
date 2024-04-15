@@ -13,7 +13,7 @@ git clone https://github.com/TechTasa/rupeexpertNode.git
 ```
 cd rupeexpertNode
 ```
-3. Select Branch
+## Select Branch
 
 ```
 git checkout -b main
