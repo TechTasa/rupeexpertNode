@@ -6,9 +6,10 @@
 # Installation
  Open Terminal In VSCODE:
 
-``` 1. git clone https://github.com/TechTasa/rupeexpertNode.git```
+```
+    1. git clone https://github.com/TechTasa/rupeexpertNode.git
 
-``` 2. cd rupeexpertNode```
+    2. cd rupeexpertNode
 
     3. Select Branch<br>
 
