@@ -1,6 +1,17 @@
 # Requirements
- 1.Node Js <a href="https://nodejs.org/en/download/current">Download</a>
- 2.Git
+ 1.Node Js <a href="https://nodejs.org/en/download/current">Download</a><br>
+ 2.Git <a href="https://git-scm.com/downloads">Download</a><br>
+
+# Installation
+ 1. Clone the repository:
+
+git clone https://github.com/username/WeatherForecastApp.git
+
+cd WeatherForecastApp
+
+npm install
+
+npm start
 # File/Folder Structure
 
 ```
