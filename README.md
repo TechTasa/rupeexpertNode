@@ -10,7 +10,7 @@
 
 ``` 2. cd rupeexpertNode```
 
-``` 3. Select Branch```<br>
+    3. Select Branch<br>
 
   ```git checkout -b main```<br>
             or<br>
