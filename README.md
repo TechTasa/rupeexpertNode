@@ -9,15 +9,15 @@
 
  2. cd rupeexpertNode
 
- 3. git checkout -b main 
-            or
-  git checkout -b test
-            or
-  git checkout -b sell
-            or
-  git checkout -b inhouse
+ 3. git checkout -b main <br>
+            or <br>
+  git checkout -b test <br>
+            or <br>
+  git checkout -b sell <br>
+            or <br>
+  git checkout -b inhouse <br>
             
- 4. npm install
+ 4. npm install <br>
 
  5. create .env file in root directory
     ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/6ae7c7c9-8d87-4319-8869-e0f0f61abd2d)
@@ -29,9 +29,9 @@
     <b>*note: each branch will have different credentials</b>
 
     
- 8. npm run dev   
-       or
-    npm start
+ 8. npm run dev <br>  
+       or <br>
+    npm start <br>
 
  10. By default it will run on http://localhost:611
 
