@@ -67,67 +67,20 @@ npm start
 
 ```
 └── 📁rupeexpertNode
-    └── .env
-    └── .gitIgnore
     └── 📁config
-        └── db.js
     └── 📁controllers
-        └── authController.js
-        └── blogController.js
-        └── blogPageController.js
-        └── careerController.js
-        └── dashboardController.js
-        └── jobController.js
-        └── leadContoller.js
-        └── leadsController.js
-        └── managementController.js
-        └── resumeController.js
-    └── env_format.env
     └── 📁middlewares
-        └── authMiddleware.js
     └── 📁models
-        └── Blog.js
-        └── Job.js
-        └── Lead.js
-        └── Resume.js
-        └── User.js
-    └── package-lock.json
-    └── package.json
     └── 📁public
         └── 📁css
-            └── apply.css
-            └── blog.css
-            └── cal.css
-            └── login.css
-            └── services.css
-            └── style.css
         └── 📁html
-            └── calculator.html
-            └── career.html
-            └── contact.html
-            └── index.html
-            └── services.html
         └── 📁images
         └── 📁js
-            └── jquery.js
-            └── navToggle.js
-            └── script.js
     └── README.md
     └── 📁routes
-        └── authRoutes.js
-        └── blogPageRoutes.js
-        └── blogRoutes.js
-        └── careerRoutes.js
-        └── dashboardRoutes.js
-        └── jobRoutes.js
-        └── leadRoutes.js
-        └── leadsRoutes.js
-        └── managementRoutes.js
-        └── resumeRoutes.js
     └── server.js
     └── 📁uploads
     └── 📁utils
-        └── errorHandler.js
     └── 📁views
         └── apply.ejs
         └── asasd.ejs
