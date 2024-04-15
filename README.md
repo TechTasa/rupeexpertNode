@@ -22,9 +22,11 @@ OR
 ```
 git checkout -b test
 ```
+OR
 ```
 git checkout -b sell
 ```
+OR
 ```
 git checkout -b inhouse
 ```
