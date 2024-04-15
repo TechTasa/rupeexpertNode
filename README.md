@@ -1,9 +1,10 @@
 # Requirements
  1.Node Js <a href="https://nodejs.org/en/download/current">Download</a><br>
  2.Git <a href="https://git-scm.com/downloads">Download</a><br>
+ 3.VSCode <a href="https://code.visualstudio.com/download">Download</a><br>
 
 # Installation
- Clone the repository:
+ Open Terminal In VSCODE:
 
 ``` 1. git clone https://github.com/TechTasa/rupeexpertNode.git```
 
