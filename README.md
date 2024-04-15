@@ -7,21 +7,28 @@
  Open Terminal In VSCODE:
 
 ```
-    git clone https://github.com/TechTasa/rupeexpertNode.git
+git clone https://github.com/TechTasa/rupeexpertNode.git
 ```
 
 ```
-    cd rupeexpertNode
+cd rupeexpertNode
 ```
-    3. Select Branch<br>
+3. Select Branch<br>
 
-  ```git checkout -b main```<br>
-            or<br>
-  ```git checkout -b test```<br>
-            or<br>
-  ```git checkout -b sell```<br>
-            or<br>
-  ```git checkout -b inhouse```<br>
+```
+git checkout -b main
+```
+OR
+```
+git checkout -b test
+```
+```
+git checkout -b sell
+```
+```
+git checkout -b inhouse
+```
+ 
             
  ```5. npm install```<br>
 
