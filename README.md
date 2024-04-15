@@ -3,15 +3,38 @@
  2.Git <a href="https://git-scm.com/downloads">Download</a><br>
 
 # Installation
- 1. Clone the repository:
+ Clone the repository:
 
-git clone https://github.com/username/WeatherForecastApp.git
+ 1. git clone https://github.com/TechTasa/rupeexpertNode.git
 
-cd WeatherForecastApp
+ 2. cd rupeexpertNode
 
-npm install
+ 3. git checkout -b main 
+            or
+  git checkout -b test
+            or
+  git checkout -b sell
+            or
+  git checkout -b inhouse
+            
+ 4. npm install
 
-npm start
+ 5. create .env file in root directory
+    ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/29f95b36-9a6f-4761-8fb7-f16faa2b4019)
+
+ 6. Put credentials in .env file
+    ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/b1b216c0-5974-4f3c-a824-1411bfa32134)
+
+    <b>*note: each branch will have different credentials</b>
+
+    
+ 8. npm run dev   
+       or
+    npm start
+
+ 10. By default it will run on http://localhost:611
+
+    
 # File/Folder Structure
 
 ```
