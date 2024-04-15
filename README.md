@@ -35,9 +35,9 @@ git checkout -b inhouse
 npm install
 ```
 
-```
-Create .env file in root directory
-```
+
+## Create .env file in root directory
+
 ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/6ae7c7c9-8d87-4319-8869-e0f0f61abd2d)<br>
 
 ```
@@ -45,9 +45,9 @@ Put credentials in .env file
 ```
 ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/b1b216c0-5974-4f3c-a824-1411bfa32134)<br>
 
-```
-Note: each branch will have different credentials
-```
+
+## Note: each branch will have different credentials
+
 
 ```
 npm run dev
@@ -58,9 +58,9 @@ OR
 npm start
 ```
 
-```
-By default it will run on http://localhost:611
-```
+
+## By default it will run on http://localhost:611
+
 
     
 # File/Folder Structure
