@@ -1,3 +1,6 @@
+# Requirements
+ 1.Node Js <a href="https://nodejs.org/en/download/current">Download</a>
+ 2.Git
 # File/Folder Structure
 
 ```
