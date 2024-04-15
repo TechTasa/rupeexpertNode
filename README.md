@@ -5,11 +5,11 @@
 # Installation
  Clone the repository:
 
-``` 1. git clone https://github.com/TechTasa/rupeexpertNode.git ```
+``` 1. git clone https://github.com/TechTasa/rupeexpertNode.git```
 
 ``` 2. cd rupeexpertNode```
 
- 3. Select Branch <br>
+``` 3. Select Branch```
   git checkout -b main <br>
             or <br>
   git checkout -b test <br>
