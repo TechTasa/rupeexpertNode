@@ -5,11 +5,12 @@
 # Installation
  Clone the repository:
 
- 1. git clone https://github.com/TechTasa/rupeexpertNode.git
+``` 1. git clone https://github.com/TechTasa/rupeexpertNode.git ```
 
- 2. cd rupeexpertNode
+``` 2. cd rupeexpertNode```
 
- 3. git checkout -b main <br>
+ 3. Select Branch <br>
+  git checkout -b main <br>
             or <br>
   git checkout -b test <br>
             or <br>
@@ -17,19 +18,19 @@
             or <br>
   git checkout -b inhouse <br>
             
- 4. npm install <br>
+ 5. npm install <br>
 
- 5. create .env file in root directory
+ 6. create .env file in root directory
     ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/6ae7c7c9-8d87-4319-8869-e0f0f61abd2d)
 
 
- 6. Put credentials in .env file
+ 7. Put credentials in .env file
     ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/b1b216c0-5974-4f3c-a824-1411bfa32134)
 
     <b>*note: each branch will have different credentials</b>
 
     
- 8. npm run dev <br>  
+ 8. npm run dev <br>
        or <br>
     npm start <br>
 
