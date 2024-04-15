@@ -28,7 +28,8 @@
  ```7. Put credentials in .env file```<br>
  ![image](https://github.com/TechTasa/rupeexpertNode/assets/107754791/b1b216c0-5974-4f3c-a824-1411bfa32134)<br>
 
-    ```<b>*note: each branch will have different credentials</b>```
+ 
+    ```Note: each branch will have different credentials```
 
     
  ```8. npm run dev```<br>
