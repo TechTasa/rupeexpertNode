@@ -30,7 +30,7 @@ OR
 ```
 git checkout -b inhouse
 ```
- 
+## Install Dependencies
 ``` 
 npm install
 ```
@@ -48,7 +48,7 @@ Put credentials in .env file
 
 ## Note: each branch will have different credentials
 
-
+## Run Project
 ```
 npm run dev
 ```
