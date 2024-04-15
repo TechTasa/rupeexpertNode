@@ -941,34 +941,32 @@ hr {
   }
 
   .links {
-    display: none;
     position: absolute;
     flex-direction: column;
     background-color: white;
     width: 100vw;
     align-items: flex-start;
-    top: 60px;
+    top: 70px;
+    left: 0;
     border-bottom: 2px solid #043a7a;
+    transform: translateY(-100vh);
+    transition: transform 0.5s ease-in-out;
+    z-index: 100;
   }
 
   .links.active {
-    display: flex;
+    transform: translateY(0px);
    background-color: white;
    z-index: 100;
   }
 
   .cta {
     padding: 1rem 0.9rem;
-    width: 100%;
     
   }
-.logo img{
-  margin-left: 50%;
-}
+
 .navbar{
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 7px;
+  gap: 12px;
 }
   .focus {
     flex-direction: row;

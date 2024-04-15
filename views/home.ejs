@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Rupee Xpert</title>
+    <script type="module" src="/pwa-install.bundle.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -15,6 +19,17 @@
 </head>
 
 <body>
+    <script type="text/javascript">
+		if ("serviceWorker" in navigator) {
+			if (navigator.serviceWorker.controller) {
+				console.log("Active service worker found, no need to register");
+			} else {
+				navigator.serviceWorker.register('service-worker.js', { scope: '/' }).then(function (reg) {
+					console.log("Service worker registered");
+				});
+			}
+		}
+	</script>
     <div class="cals"> <button class="close">
             <i class="fa-solid fa-xmark"></i>
         </button><embed src="../html/calculator.html" class="embed" width="300" height="500px" /></div>
@@ -30,22 +45,7 @@
             </svg></div>
         <a href="/" class="logo"><img src="../images/XpertRupees_Logo.svg" alt=""></a>
         
-            <!-- <button style="display: none;" id="pwaToast" class="cta" onClick="installApp()">Install App</button> -->
-          
-        <div class="popup" id="pwaToast" style="display: none;">
-            <div class="popup-header">
-                <span>RupeeXpert App</span>
-                <button class="close-button">×</button>
-            </div>
-            <hr>
-            <div class="popup-content">
-                <p>You can now install RupeeXpert on your device</p>
-            </div>
-            <div class="popup-buttons">
-                <button class="cancel-button">Cancel</button>
-                <button class="ok-button" onClick="installApp()">Install App</button>
-            </div>
-        </div>
+       
         <ul class="links">
                 <li class=" link active"><a href="/">Home</a></li>
                 <li class=" link"><a href="/services">Services</a></li>
@@ -81,7 +81,7 @@
         <div class="cards-grid">
             <a href="loan/apply/creditcard" class="wrapper-card" id="creditcard">
                 <span>
-                    <h1 class="card-title">CREDIT2 CARD</h1>
+                    <h1 class="card-title">CREDIT CARD</h1>
                     <img src="../images/debit-card.png" alt="">
                 </span>
                 <p class="card-discription">From 35+ options, choose a card matching your lifestyle & needs</p>
@@ -384,11 +384,11 @@
         }
     </style>
     <section class="footer2">
-        <small>&copy; Copyright 2024, Ocean One Pvt. Ltd</small>
+        <small>&copy; Copyright 2024, RupeeXpert</small>
         
         <small> Developed By <a href="https://www.techtasa.com/">Techtasa</a></small>
     </section>
-    <script>
+    <!-- <script>
         document.querySelector(".cancel-button").addEventListener("click",()=>{
             document.getElementById("pwaToast").style.display="none"
         })
@@ -418,7 +418,70 @@ document.getElementById("pwaToast").style.display="none"
 
 
 
-    </script>
+    </script> -->
+    <pwa-install id="pwa-install" manifest-url="manifest.json"></pwa-install>
+
+	<script type="text/javascript">
+		var pwaInstall = document.getElementById("pwa-install");
+
+		document.getElementById('events-area').value = "";
+		const logMessage = (message) => {
+			console.log(message);
+			document.getElementById('events-area').value += `>: ${message}\r\n`;
+		}
+
+		const getRelated = () => {
+			pwaInstall.getInstalledRelatedApps().then(
+				(result) => {
+					logMessage(result.toString() || 'None');
+				}
+			)
+		}
+
+		const forceStyle = (style) => {
+			switch (style) {
+				case 'apple-mobile':
+					pwaInstall.isAppleDesktopPlatform = false;
+					pwaInstall.isAppleMobilePlatform = true;
+					break;
+				case 'apple-desktop':
+					pwaInstall.isAppleMobilePlatform = false;
+					pwaInstall.isAppleDesktopPlatform = true;
+					break;
+				case 'chrome':
+					pwaInstall.isAppleMobilePlatform = false;
+					pwaInstall.isAppleDesktopPlatform = false;
+					break;
+			}
+			pwaInstall.hideDialog();
+			pwaInstall.showDialog();
+		}
+
+		const disableInstallDescription = (cb) => {
+			cb.checked ? pwaInstall.setAttribute('disable-install-description', true) :
+				pwaInstall.removeAttribute('disable-install-description');
+		}
+		const disableScreenshots = (cb) => {
+			cb.checked ? pwaInstall.setAttribute('disable-screenshots', true) :
+				pwaInstall.removeAttribute('disable-screenshots');
+		}
+		const disableClose = (cb) => {
+			cb.checked ? pwaInstall.setAttribute('disable-close', true) :
+				pwaInstall.removeAttribute('disable-close');
+		}
+		const setAttr = (attr, value) => {
+			value ? pwaInstall.setAttribute(attr, value) :
+				pwaInstall.removeAttribute(attr);
+			pwaInstall._init();
+		}
+
+		pwaInstall.addEventListener('pwa-install-success-event', (event) => { logMessage(event.detail.message) });
+		pwaInstall.addEventListener('pwa-install-fail-event', (event) => { logMessage(event.detail.message) });
+		pwaInstall.addEventListener('pwa-user-choice-result-event', (event) => { logMessage(event.detail.message) });
+		pwaInstall.addEventListener('pwa-install-available-event', (event) => { logMessage(event.detail.message) });
+		pwaInstall.addEventListener('pwa-install-how-to-event', (event) => { logMessage(event.detail.message) });
+		pwaInstall.addEventListener('pwa-install-gallery-event', (event) => { logMessage(event.detail.message) });
+	</script>
 </body>
 <script src="../js/jquery.js"></script>
 <script src="../js/script.js"></script>
