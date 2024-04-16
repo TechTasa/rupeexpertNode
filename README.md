@@ -3,6 +3,14 @@
  2.Git <a href="https://git-scm.com/downloads">Download</a><br>
  3.VSCode <a href="https://code.visualstudio.com/download">Download</a><br>
 
+# Git Setup (First time only)
+```
+git config --global user.name "John Doe"
+```
+```
+
+git config --global user.email johndoe@example.com
+```
 # Installation
  Open Terminal In VSCODE:
 
