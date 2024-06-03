@@ -239,27 +239,25 @@ hr {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.wrapper-card {
+/* .wrapper-card {
   padding: 1rem;
   flex: 1 0 22rem;
   margin: 20px;
   height: auto;
-  /*border-radius: 40px 8px;
-  box-shadow: 2px 2px 10px rgb(0 0 0 / 34%);*/
   display: flex;
   flex-direction: column;
   text-decoration: none;
   border-bottom: 2px solid rgba(0, 0, 0, 0.37);
   border-left: 2px solid rgba(0, 0, 255, 0.384);
   max-width: 17rem;
-}
+} */
 
-#creditcard {
+/* #creditcard {
   background-color: palegoldenrod;
 }
 #creditcard:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5); 
   transform: scale(1.5); 
 }
 
@@ -267,8 +265,8 @@ hr {
   background-color: paleturquoise;
 }
 #personalloan:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
   transform: scale(1.5); 
 }
 
@@ -276,8 +274,8 @@ hr {
   background-color: thistle;
 }
 #microloan:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5); 
   transform: scale(1.5);
 }
 
@@ -285,8 +283,8 @@ hr {
   background-color: orange;
 }
 #businessloan:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5); 
   transform: scale(1.5);
 }
 
@@ -294,8 +292,8 @@ hr {
   background-color: burlywood;
 }
 #homeloan:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5); 
   transform: scale(1.5);
 }
 
@@ -303,8 +301,8 @@ hr {
   background-color: palegreen;
 }
 #lifeinsurance:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5); 
   transform: scale(1.5);
 }
 
@@ -312,8 +310,8 @@ hr {
   background-color: palevioletred;
 }
 #healthinsurance:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5); 
   transform: scale(1.5);
 }
 
@@ -321,8 +319,8 @@ hr {
   background-color: blanchedalmond;
 }
 #returnplan:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5); 
   transform: scale(1.5);
 }
 
@@ -330,12 +328,12 @@ hr {
   background-color: peru;
 }
 #mutualfunds:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
   transform: scale(1.5);
-}
+} */
 
-.wrapper-card span {
+/* .wrapper-card span {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -368,19 +366,144 @@ hr {
 .card-cta:hover {
   text-decoration: underline;
   font-size: 13px;
-}
+} */
 
 .cards-grid {
   /* display: grid;
   grid-template-columns: repeat(4, 18rem);
   grid-template-rows: repeat(2, max-content);
   gap: 2rem; */
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
   /* justify-content: flex-start;
   align-items: center;
   gap: 3rem; */
+}
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f8f8;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.wrapper-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #0077b6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.wrapper-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#creditcard {
+  background-color: #ffeaa7;
+}
+
+#personalloan {
+  background-color: #d5f5e3;
+}
+
+#microloan {
+  background-color: #e8daef;
+}
+
+#businessloan {
+  background-color: #aed6f1;
+}
+
+#homeloan {
+  background-color: #fadbd8;
+}
+
+.wrapper-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.wrapper-card:hover::before {
+  opacity: 1;
+}
+
+.wrapper-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #0077b6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-discription {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.card-cta {
+  font-weight: bold;
+  color: #e67e22;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.card-cta:hover {
+  color: #d35400;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .wrapper {
+      padding: 1rem;
+  }
+
+  .cards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+  }
+
+  .wrapper-card {
+      padding: 1rem;
+  }
 }
 
 /* General Styles */
@@ -785,9 +908,9 @@ hr {
   border-radius: 10px;
 }
 
-.wrapper-card:hover {
+/* .wrapper-card:hover {
   cursor: pointer;
-}
+} */
 
 .contact-page {
   display: flex;
@@ -1178,7 +1301,7 @@ hr {
   .apply {
     padding: 0.3rem 1.3rem;
   }
-
+/* 
   .wrapper {
     padding: 1rem;
   }
@@ -1223,7 +1346,7 @@ hr {
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: repeat(2, max-content);
     gap: 2rem;
-  }
+  } */
 
   .pamplets {
     padding-inline: 0.1rem;
