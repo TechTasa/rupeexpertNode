@@ -1420,13 +1420,13 @@ body {
   }
 
   .footer-content {
-    padding-inline: 0rem;
+    padding-inline: 1rem;
     position: relative;
   }
 
   .footer-map {
     padding: 0.2rem;
-    width: fit-content;
+    width: 100%;
   }
 
   .icons {
