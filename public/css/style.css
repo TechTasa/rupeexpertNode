@@ -888,16 +888,24 @@ body {
   font-size: 14capx;
   font-weight: 500;
 }
-
+.footer-link a:hover{
+  color: white;
+}
 .footer-link:hover a {
   text-decoration: underline;
 }
 
 .icons {
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
+  font-size: 25px;
 }
-
+.icons a{
+  color: white;
+}
+.icons a:hover{
+  color: white;
+}
 .icons a:hover {
   border-bottom: 2px solid white;
 }
